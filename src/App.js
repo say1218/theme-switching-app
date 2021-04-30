@@ -17,6 +17,8 @@ function App() {
 				<button name='lightMode' onClick={handleThemeChange}>
 					Set Light Mode
 				</button>
+
+				<p style={{ fontSize: "2rem" }}> I AM A THEME SWITCHER</p>
 			</div>
 		</ThemeProvider>
 	);

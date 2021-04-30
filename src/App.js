@@ -1,23 +1,22 @@
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import GlobalStyle from "./components/styles/GlobalStyle";
+import useTheme from "./components/useTheme";
 
 function App() {
-	let darkMode = {
-		background: "black",
-		color: "white",
-	};
-
-	let lightMode = {
-		background: "white",
-		color: "dark",
-	};
+	let { theme, handleThemeChange } = useTheme({});
 
 	return (
-		<ThemeProvider theme={lightMode}>
+		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<div className='App'>
-				<p> This is the mode</p>
+				<button name='darkMode' onClick={handleThemeChange}>
+					Set Dark Mode
+				</button>
+
+				<button name='lightMode' onClick={handleThemeChange}>
+					Set Light Mode
+				</button>
 			</div>
 		</ThemeProvider>
 	);
